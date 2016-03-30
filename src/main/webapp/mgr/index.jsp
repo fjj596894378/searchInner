@@ -130,8 +130,10 @@ div.col-md-7.posts a h5  {
 								<div class="col-md-7 posts">
 								<a href="<%=basePath%>edit/getArticle.action?id=${article.id }" >
 								<h5 style="font-size: medium;font-weight: normal;line-height: 1.54">${article.articleTitle}</h5></a>
+								 <c:if test="${not empty article.articleTag}">
 									标签：<span style="color: #404040; font: normal 1px/2px 'Microsoft YaHei';font-weight: 10px;">${article.articleTag}</span>
-									<p style="color: #666; font: 13px ; line-height: 1.54;">${article.articleContentPre}</p>
+								 </c:if>
+								 <p style="color: #666; font: 13px ; line-height: 1.54;">${article.articleContentPre}</p>
 								</div>
 								<div class="col-md-2 date">
 									<p>${article.addTime}</p>

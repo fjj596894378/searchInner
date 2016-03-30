@@ -120,8 +120,8 @@ var editortmp;
 				K('#create1').click(function() {
 					var dialog = K.dialog({
 						width : 500,
-						title : '分类管理',
-						body : '<div style="margin:10px;">分类名：<input type=\"text\" id=\"catalogName\" name=\"catalogName\" style=\"font-size : 0.5em;width:200px; height:20px; float:left;\" maxlength="10"> </div>',
+						title : '分类管理--添加分类',
+						body : '<div style="margin:10px;"><input type=\"text\" id=\"catalogName\" name=\"catalogName\" style=\"font-size : 0.5em;width:200px; height:20px; float:left;\" maxlength="10"> </div>',
 						closeBtn : {
 							name : '关闭',
 							click : function(e) {

@@ -80,6 +80,8 @@ public class ArticleServiceDAOImp implements IArticleServiceDAO{
 		article.setArticleTitle(articleAndCatalog.getArticleTitle());
 		article.setArticleContent(articleAndCatalog.getArticleContent());
 		article.setArticleContentPre(articleAndCatalog.getArticleContentPre().replaceAll("\\s*",""));
+		
+		System.out.println(article.getArticleContentPre());
 		String[]  tagArr = articleAndCatalog.getArticleTag().split(",");
 		/*for(String str : tagArr){
 			articleTagList.add(str);

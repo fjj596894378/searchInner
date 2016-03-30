@@ -63,6 +63,7 @@
 			<mvc:mapping path="/article/getArticlesDraftByUserId.action" />
 		
 			<mvc:mapping path="/catalog/**" />
+			<mvc:mapping path="/comment/**" />
 			<mvc:mapping path="/edit/index.action" />
 			<mvc:mapping path="/edit/reedit.action" />
 			<mvc:mapping path="/edit/addArticle.action" />

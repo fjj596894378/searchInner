@@ -3,6 +3,7 @@ package com.searchinner.controller;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
@@ -20,10 +21,12 @@ import com.google.gson.JsonObject;
 import com.searchinner.model.Article;
 import com.searchinner.model.Catalog;
 import com.searchinner.model.CatalogAndArticleRef;
+import com.searchinner.model.Comment;
 import com.searchinner.model.User;
 import com.searchinner.service.dao.IArticleServiceDAO;
 import com.searchinner.service.dao.ICatalogAndArticleRefServiceDAO;
 import com.searchinner.service.dao.ICatalogServiceDAO;
+import com.searchinner.service.dao.ICommentServiceDAO;
 import com.searchinner.viewmodel.ArticleAndCatalog;
 
 @Controller
@@ -32,6 +35,7 @@ public class EditController {
 	private IArticleServiceDAO articleServiceDAOImp;
 	private ICatalogServiceDAO catalogServiceDAOImp;
 	private ICatalogAndArticleRefServiceDAO catalogAndArticleRefServiceDAOImp;
+	private ICommentServiceDAO commentServiceDAOImp;
 	
 	/**
 	 * 进入编辑文章页面
@@ -229,7 +233,41 @@ public class EditController {
 			}
 			model.addObject("articleTagList", articleTagList);
 		}
+		
+		List<Comment> commentsRet = commentServiceDAOImp.getComments(article.getId());
+		List<Comment> subReplay = new LinkedList<Comment>();
+		Map<Integer, List<Comment>> mapsRet = new HashMap<Integer, List<Comment>>();
+		if(commentsRet != null && commentsRet.size() > 0){
+			for (Comment commentModel : commentsRet) {
+				if(commentModel.getCommentPid() != 0){
+					if(mapsRet.containsKey(commentModel.getCommentPid())){
+						List<Comment> subReplayOfList = mapsRet.get(commentModel.getCommentPid());
+						subReplayOfList.add(commentModel);
+						mapsRet.put(commentModel.getCommentPid(), subReplayOfList);
+					}else{
+						subReplay = new LinkedList<Comment>();
+						subReplay.add(commentModel);
+						mapsRet.put(commentModel.getCommentPid(), subReplay);
+					}
+				}
+			}
+			subReplay = new LinkedList<Comment>();
+			for (Comment commentModel : commentsRet) {
+				
+				if(commentModel.getCommentPid() == 0){
+					subReplay.add(commentModel);
+				}
+			}
+			
+		}
 		model.addObject("article", article);
+		if( subReplay != null && subReplay.size() > 0){
+			model.addObject("commentsRet", subReplay);
+		}else{
+			model.addObject("commentsRet", commentsRet);
+		}
+		//model.addObject("commentsRet", commentsRet);
+		model.addObject("mapsRet", mapsRet);
 		model.setViewName("user/user-readArticle");
 		return model;
 	}
@@ -258,6 +296,15 @@ public class EditController {
 	public void setCatalogAndArticleRefServiceDAOImp(
 			ICatalogAndArticleRefServiceDAO catalogAndArticleRefServiceDAOImp) {
 		this.catalogAndArticleRefServiceDAOImp = catalogAndArticleRefServiceDAOImp;
+	}
+	
+	public ICommentServiceDAO getCommentServiceDAOImp() {
+		return commentServiceDAOImp;
+	}
+	
+	@Resource(name = "commentServiceDAOImp")
+	public void setCommentServiceDAOImp(ICommentServiceDAO commentServiceDAOImp) {
+		this.commentServiceDAOImp = commentServiceDAOImp;
 	}
 
 }

@@ -42,7 +42,7 @@ public class ArticleDAOImp implements ArticleDAO {
 				article.getArticleCatalog(),/*分类*/
 				article.getArticleAuthorId(),
 				article.getStatus()};
-		System.out.println(article.getArticleContentPre());
+		
 		try{
 			this.jdbcTemplate.update(sql, obj);
 			System.out.println("插入成功！");
@@ -78,7 +78,7 @@ public class ArticleDAOImp implements ArticleDAO {
 	@Override
 	public Article getArticle(String id) {
 		// TODO Auto-generated method stub
-		String sql = "select id,articleTitle,articleContent,articleAuthor,lastModified,isdelete,addTime,articleTag,articleCatalog from learn_article where isdelete=0 and id=?";// "+id;
+		String sql = "select id,articleTitle,articleContent,articleAuthor,lastModified,isdelete,addTime,articleTag,articleCatalog,articleAuthorId,status from learn_article where isdelete=0 and id=?";// "+id;
 		Object obj[] = { id };
 		Article articleRet = new Article();
 		List list = jdbcTemplate.query(sql, obj,
@@ -98,6 +98,9 @@ public class ArticleDAOImp implements ArticleDAO {
 						article.setIsDelete(rs.getInt("isdelete"));
 						article.setArticleTag(rs.getString("articleTag"));
 						article.setArticleCatalog(rs.getString("articleCatalog"));
+						article.setArticleAuthorId(rs.getString("articleAuthorId"));
+						article.setStatus(rs.getInt("status"));
+						
 						return article;
 					}
 
