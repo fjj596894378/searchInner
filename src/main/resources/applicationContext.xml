@@ -4,6 +4,7 @@
 	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:p="http://www.springframework.org/schema/p" xmlns:cache="http://www.springframework.org/schema/cache"
 	xmlns:jaxws="http://cxf.apache.org/jaxws" xmlns:mongo="http://www.springframework.org/schema/data/mongo"
+	xmlns:task="http://www.springframework.org/schema/task"
 	xsi:schemaLocation="
                     http://www.springframework.org/schema/beans
                     http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
@@ -17,7 +18,9 @@
                     http://www.springframework.org/schema/context/spring-context-3.1.xsd
                     http://www.springframework.org/schema/cache 
                     http://www.springframework.org/schema/cache/spring-cache-3.1.xsd
-                    http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd ">
+                    http://www.springframework.org/schema/task  
+					http://www.springframework.org/schema/task/spring-task-3.1.xsd
+                    http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
 
 	<!-- 注解支持 -->
 	<!-- <context:annotation-config /> -->
@@ -27,6 +30,9 @@
 	 <!-- 缓存配置(两种) -->
 	<!-- 启用缓存注解功能(请将其配置在Spring主配置文件中) -->
 	<cache:annotation-driven />
+	<task:annotation-driven/>
+
+    
 	<!-- 属性文件位置 -->
 	<bean id="annotationPropertyConfigurer"
 		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
@@ -35,6 +41,7 @@
 			<!-- 	<value>classpath:mongodb.properties</value> -->
 			<value>classpath:oracle.properties</value>
 				<value>classpath:log4j.properties</value>
+				<value>classpath:quartz.properties</value>
 			</list>
 		</property>
 	</bean>

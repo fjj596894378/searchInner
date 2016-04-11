@@ -436,7 +436,7 @@ p {
 												        <div class="text">
 												          <p>${mycomment.commentcontext}</p>
 												        </div>
-												        <p class="attribution">by <a href="<%=basePath%>article/getArticlesByOtherUserId.action?userName=${mycomment.commentUserId}">${comments.commentUserName}</a> at ${comments.addTime}
+												        <p class="attribution">by <a href="<%=basePath%>article/getArticlesByOtherUserId.action?userName=${mycomment.commentUserId}">${mycomment.commentUserName}</a> at ${mycomment.addTime}
 												        </p>
 												      </div>
 												    </article>
@@ -465,7 +465,7 @@ p {
 				</div>
 			</div>
 		</c:if>
-		<c:if test="${article.status==0}">
+		 <c:if test="${article.status==0}"> 
 			<div class="clearfix"></div>
 			<div class="content" style="margin-top:100px">
 				<div class="container" style="margin-left:500px">
@@ -475,7 +475,7 @@ p {
 					name="commontButton" class="button blue" value="评论" />
 				</div>
 			</div>
-		</c:if>
+		 </c:if> 
 	<!---->
 	 <%@ include file="/mgr/public/includefiles/leftAndRight.jsp"%> 
 </body>

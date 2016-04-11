@@ -26,27 +26,33 @@
 <script>
 var editortmp;
 	KindEditor.ready(function(K) {
-		var editor = K.create('textarea[name="articleContent"]', {
 		
+		var editor = K.create('textarea[name="detailstext"]', {
 			cssPath : '<%=basePath%>kindeditor/plugins/code/prettify.css',
-
 			uploadJson : '<%=basePath%>kindeditor/jsp/upload_json.jsp',
-
 			fileManagerJson : '<%=basePath%>kindeditor/jsp/file_manager_json.jsp',
-
 									allowFileManager : true,
-
-									afterCreate : function() {
-
+									// resizeType : 0,
+									/*afterCreate : function() {
 										var self = this;
+										K.ctrl(document, 13, function() {
+											self.sync();
+											
+										});
+										K.ctrl(self.edit.doc, 13, function() {
+											self.sync();
+											
+										});
+									}*/
 
-
-									}
-
+								  afterCreate : function() {
+										var self = this;
+										self.sync();
+									} 
+								 //afterBlur: function(){this.sync();}   
 								});
-		/* editor.html('${article.articleContent}'); */
-				prettyPrint();
-				editortmp = editor;
+		prettyPrint();
+			editortmp = editor;
 			});
 	
 	
@@ -285,7 +291,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								maxlength="100" value="${article.articleTitle}" > <br />
 							<p class="subtit">文章内容</p>
 
-							<textarea id="editContent" name="articleContent"
+							<textarea id="editContent" name="detailstext"
 								style="width:800px;height:400px;visibility:hidden;"  >${article.articleContent}</textarea>
 							<br /> 
 							<p class="subtit">文章标签（添加Tag，你的内容能被更多人看到）<span style="color:red" >（最多添加5个标签，多个标签之间用“,”分隔【禁止输入特殊字符】）</span></p><!-- 我们为什么要打Tag？ -->

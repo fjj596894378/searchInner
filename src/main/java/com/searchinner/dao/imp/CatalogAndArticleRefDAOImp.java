@@ -41,6 +41,7 @@ public class CatalogAndArticleRefDAOImp implements CatalogAndArticleRefDAO {
 		try{
 			this.jdbcTemplate.update(sql, obj);
 		}catch(Exception e){
+			e.printStackTrace();
 			throw new MyRuntimeException("添加文章关联失败",e);
 		}
 		return ref;
@@ -93,6 +94,7 @@ public class CatalogAndArticleRefDAOImp implements CatalogAndArticleRefDAO {
 		try{
 			this.jdbcTemplate.update(sql, obj);
 		}catch(Exception e){
+			e.printStackTrace();
 			throw new MyRuntimeException("删除文章关联失败");
 		}
 	}
@@ -119,6 +121,7 @@ public class CatalogAndArticleRefDAOImp implements CatalogAndArticleRefDAO {
     	        "insert into learn_catalog_article(catalogid,userName,articleid) values(?,?,?)",
     	        batch);
 	    }catch(Exception e){
+	    	e.printStackTrace();
 	    	throw new MyRuntimeException("添加文章关联失败（list）");
 	    }
 		return refList.get(0);

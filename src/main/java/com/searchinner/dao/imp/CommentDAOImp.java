@@ -52,6 +52,7 @@ public class CommentDAOImp implements CommentDAO{
 		    int generatedId = keyHolder.getKey().intValue();
 		    commentRet.setCommentId( generatedId); //返回id
 		}catch(Exception e){
+			e.printStackTrace();
 			throw new MyRuntimeException("添加评论出错");
 		}
 		return commentRet;
