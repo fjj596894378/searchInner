@@ -47,6 +47,7 @@ public class CatalogDAOImp implements CatalogDAO{
 		    int generatedId = keyHolder.getKey().intValue();
 		    catalogRet.setCatalogid( generatedId); //返回id
 		}catch(Exception e){
+			e.printStackTrace();
 			throw new MyRuntimeException("添加个人分类出错");
 		}
 		return catalogRet;
@@ -62,6 +63,7 @@ public class CatalogDAOImp implements CatalogDAO{
 			this.jdbcTemplate.update(sql, obj);
 			System.out.println("更新分类成功！");
 		}catch(Exception e){
+			e.printStackTrace();
 			throw new MyRuntimeException("更新分类失败" ,e);
 		}
 		return catalog;

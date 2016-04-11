@@ -174,7 +174,12 @@
 			<version>2.8.5</version> </dependency> -->
 
 		<!-- EHCache -->
-		
+		<!-- quartz -->
+		<dependency>
+ <groupId>org.quartz-scheduler</groupId>
+ <artifactId>quartz</artifactId>
+ <version>1.8.4</version>
+</dependency>
 		<!-- oracle6 连接数据库  自己导包。不用maven导 -->
 	</dependencies>
 

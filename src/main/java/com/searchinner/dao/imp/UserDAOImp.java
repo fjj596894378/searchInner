@@ -34,12 +34,21 @@ public class UserDAOImp implements UserDAO {
 		user.setImagePath("mgr/images/dota.jpg");
 		Object obj[] = { user.getRealName(), user.getUserName(),
 				password, user.getImagePath()};
-		int temp = this.jdbcTemplate.update(sql, obj);
-
+		//int temp = this.jdbcTemplate.update(sql, obj);
+/*
 		if (temp > 0) {
 			System.out.println("插入成功！");
 		} else {
+			e.printStackTrace();
 			throw new MyRuntimeException("注册失败");
+		}
+		*/
+		try{
+			this.jdbcTemplate.update(sql, obj);
+			System.out.println("插入成功！");
+		}catch(Exception e){
+			e.printStackTrace();
+			//throw new MyRuntimeException("注册失败" ,e);
 		}
 		return user;
 	}
@@ -58,6 +67,7 @@ public class UserDAOImp implements UserDAO {
 			this.jdbcTemplate.update(sql, obj);
 			System.out.println("更新成功！");
 		}catch(Exception e){
+			e.printStackTrace();
 			throw new MyRuntimeException("更新文章失败" ,e);
 		}
 		return user;
@@ -95,11 +105,13 @@ public class UserDAOImp implements UserDAO {
 	@Override
 	public void deleteUser(String userName) {
 		String sql = "update learn_user set isdelete =1  where userName=" + userName;
-		int temp = this.jdbcTemplate.update(sql);
-		if (temp > 0) {
+		//int temp = this.jdbcTemplate.update(sql);
+		try{
+			this.jdbcTemplate.update(sql);
 			System.out.println("删除成功！");
-		} else {
-			throw new MyRuntimeException("删除失败！");
+		}catch(Exception e){
+			e.printStackTrace();
+			throw new MyRuntimeException("删除用户失败");
 		}
 	}
 
@@ -186,6 +198,7 @@ public class UserDAOImp implements UserDAO {
 		try{
 			this.jdbcTemplate.update(sql,obj);
 		}catch(Exception e){
+			e.printStackTrace();
 			throw new MyRuntimeException("更新用户分类失败");
 		}
 	}

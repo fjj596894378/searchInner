@@ -6,6 +6,9 @@
 <base href="<%=basePath%>">
 
 <title>首页</title>
+
+
+
  <!-- 登录和注册 -->
  
 <!-- 登录注册 -->
@@ -19,10 +22,8 @@ $(document).ready(function(){
 	$("#self-modal").modal("hide");
 });
 
-
-
-
 </script>
+
 <!-- 登录和注册 -->
 
  

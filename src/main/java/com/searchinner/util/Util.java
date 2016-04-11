@@ -5,6 +5,9 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.UUID;
 
+import com.searchinner.model.Comment;
+import com.searchinner.model.MessageInfo;
+
 public class Util {
 	/**
 	 * 启动tomcat，访问
@@ -104,4 +107,15 @@ public class Util {
 	    }
 	    return sb.toString();
 	  }
+	
+	public static MessageInfo commentToMessage(Comment comment){
+		MessageInfo info = new MessageInfo();
+		info.setArticleId(comment.getArticleId());
+		info.setCommentcontext(comment.getCommentcontext());
+		info.setCommentedUserId(comment.getCommentedUserId());
+		info.setCommentedUserName(comment.getCommentedUserName());
+		info.setCommentUserId(comment.getCommentUserId());
+		info.setCommentUserName(comment.getCommentUserName());
+		return info;
+	}
 }

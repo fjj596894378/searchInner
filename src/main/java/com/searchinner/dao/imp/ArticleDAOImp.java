@@ -48,6 +48,7 @@ public class ArticleDAOImp implements ArticleDAO {
 			System.out.println("插入成功！");
 			article.setId(uuid); // 获得主键
 		}catch(Exception e){
+			e.printStackTrace();
 			throw new MyRuntimeException("添加文章失败" ,e);
 		}
 		return article;
@@ -70,6 +71,7 @@ public class ArticleDAOImp implements ArticleDAO {
 			System.out.println("更新成功！");
 			article.setId(article.getId()); // 获得主键
 		}catch(Exception e){
+			e.printStackTrace();
 			throw new MyRuntimeException("更新文章失败" ,e);
 		}
 		return article;
@@ -122,6 +124,7 @@ public class ArticleDAOImp implements ArticleDAO {
 			this.jdbcTemplate.update(sql,obj);
 			System.out.println("删除成功！");
 		}catch(Exception e){
+			e.printStackTrace();
 			throw new MyRuntimeException("删除文章失败" ,e);
 		}
 	}
