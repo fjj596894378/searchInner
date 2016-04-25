@@ -112,16 +112,17 @@ div.col-md-7.posts a h5  {
 <body>
       
 	<!-- <div class="top-header"></div> -->
-	<div class="container">
+	<%@ include file="/mgr/public/includefiles/header.jsp"%> 
+	<%-- <div class="container">
 		 <div class="header">
 		<a href="<%=basePath%>search/index.action"><h1>gnnt</h1></a>
 		</div> 
 		<!-- 登录和注册 -->
-		<%--  <c:if test="${not empty currentUser}">
+		 <c:if test="${not empty currentUser}">
 		<a id="yourself" href="#"><font color=red>欢迎您: ${currentUser.userName}</font> </a>
 		&nbsp;&nbsp;
-		 </c:if> --%>
-	<%--  |&nbsp;&nbsp;<a href="<%=basePath%>edit/index.action" target="_blank">写新文章 </a> --%>
+		 </c:if>
+	 |&nbsp;&nbsp;<a href="<%=basePath%>edit/index.action" target="_blank">写新文章 </a>
 		<div class="header-right">
 			<div class="list"></div>
 			
@@ -144,7 +145,7 @@ div.col-md-7.posts a h5  {
 			</form>
 		</div>
 		<div class="clearfix"></div>
-	</div>
+	</div> --%>
 	<!---->
 	<div class="content">
 		<div class="container">

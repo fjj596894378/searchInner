@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
+import com.google.gson.JsonObject;
 import com.searchinner.model.User;
 
 public class CommonInterceptor extends HandlerInterceptorAdapter{  
@@ -35,7 +36,8 @@ public class CommonInterceptor extends HandlerInterceptorAdapter{
        
     	User user =  (User)request.getSession().getAttribute("currentUser");   
         if(user == null){  
-            request.getRequestDispatcher("/mgr/index.jsp").forward(request, response);  
+            request.getRequestDispatcher("/mgr/index.jsp").forward(request, response);
+            /*request.getSession().setAttribute("massagesOflogin", "1");*/
             return false;  
         }else{
             return true; 
@@ -49,8 +51,7 @@ public class CommonInterceptor extends HandlerInterceptorAdapter{
     @Override    
     public void postHandle(HttpServletRequest request,    
             HttpServletResponse response, Object handler,    
-            ModelAndView modelAndView) throws Exception {     
-       
+            ModelAndView modelAndView) throws Exception {  
     }    
     
     /**  

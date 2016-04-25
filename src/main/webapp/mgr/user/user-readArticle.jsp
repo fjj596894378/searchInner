@@ -137,7 +137,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 												}
 												},
 												error : function() {
-													alert("评论失败，请联系管理员");
+													alert("请登录");
 												}
 											});
 								});
@@ -334,39 +334,15 @@ p {
     -ms-transform: rotate(45deg);
     -o-transform: rotate(45deg);
 }
+
+.article_content p{
+font-family:Courier New,Console,Verdana,"微软雅黑";font:normal 14px/20px Arial;
+}
 </style>
 <body>
 				
 	<!-- <div class="top-header"></div> -->
-	<div class="container">
-	
-		<div class="header">
-		
-			 <a href="<%=basePath%>search/index.action"><h1>gnnt</h1></a>  
-		</div>
-		<div class="header-right">
-			<div class="list"></div>
-
-			<form action="<%=basePath%>search/searchData.action" name="searchform"
-				id="searchform" method="post">
-				<table border="0" align="center" cellpadding="0" cellspacing="0"
-					class="tab_search">
-					<tr>
-						<td><input type="text" name="strParam" title="Search"
-							class="searchinput" id="searchinput"
-							onkeydown="if (event.keyCode==13) {}"
-							onfocus="if(this.value=='- Search Products -')value='';"
-							value="${retSearch }" size="10" /></td>
-						<td><input type="image" class="searchaction"
-							onclick="if(document.forms['search'].searchinput.value=='- Search Products -')document.forms['search'].searchinput.value='';"
-							alt="Search" src="<%=basePath%>mgr/images/magglass.gif"
-							border="0" hspace="2" /></td>
-					</tr>
-				</table>
-			</form>
-		</div>
-		<div class="clearfix"></div>
-	</div>
+	 <%@ include file="/mgr/public/includefiles/header.jsp"%> 
 	
 	<!---->
 	<div class="content">
@@ -392,7 +368,7 @@ p {
 				我要评论</a> -->
 				
 					 <hr style="height:10px;border:none;border-top:10px groove rgb(236, 223, 89);" />
-						${article.articleContent }
+						<div class="article_content" >${article.articleContent }</div>
 					</div>
 				</div>
 				<!--  完整的一个模块 -->

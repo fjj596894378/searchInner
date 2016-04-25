@@ -34,6 +34,7 @@
 		<context:exclude-filter type="annotation"
 			expression="org.springframework.stereotype.Service" />
 	</context:component-scan>
+	
 	<!-- <context:component-scan base-package="com.searchinner.controller" /> -->
 	<context:annotation-config />
 	<bean
@@ -83,5 +84,18 @@
 		</mvc:interceptor>
 		<!-- 当设置多个拦截器时，先按顺序调用preHandle方法，然后逆序调用每个拦截器的postHandle和afterCompletion方法 -->
 	</mvc:interceptors>
-
+	
+	 <bean id="developController" class="com.searchinner.controller.DevelopController">
+	 	<property name="serviceNameMap">
+            <map>
+                <entry key="core_issue_subscribe" value="core_issue_subscribe_gnnt" />
+                <entry key="tc_issuetradeweb_gnn" value="tc_issuetradeweb_gnnt" />
+                <entry key="tc_selfopenaccount_g" value="tc_selfopenaccount_gnnt" />
+                <entry key="core_mgrgetfrontuser" value="core_mgrgetfrontusers_gnnt" />
+                 <entry key="core_conditionPlugin" value="core_conditionPlugin_gnnt" />
+                 <entry key="core_mgrgetfrontuser" value="core_mgrgetfrontusers_gnnt" />
+                 <entry key="core_timebargain_gnn" value="core_timebargain_gnnt" />
+            </map>
+        </property>
+	 </bean>
 </beans>

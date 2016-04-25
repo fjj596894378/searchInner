@@ -72,7 +72,7 @@ public class MessageInfoCache {
     			cacheMap.remove(key);
     		}else{
     			messageRet = subReplayOfList.remove(0);
-    			System.out.println(cacheMap);
+    			//System.out.println(cacheMap);
     		}
     		readCacheMap.put(messageRet.getCommentId(), messageRet);
     	}
@@ -121,7 +121,7 @@ public class MessageInfoCache {
 					e.printStackTrace();
 				}
 				MessageInfoCache.cacheMap.clear();
-				System.out.println("删除了");
+				//System.out.println("删除了");
 			}
 		}).start();
 	}

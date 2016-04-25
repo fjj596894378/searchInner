@@ -1,12 +1,10 @@
 package com.searchinner.task;
 
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
 
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import com.searchinner.model.MessageInfo;
@@ -26,18 +24,18 @@ public class MessageInfoTask {
 	/*@Scheduled(cron = "0/30 0/1 9-21 * * ?")*/
 	public void getMessageInfos() {
 		//MessageInfoCache.getInstance();
-		System.out.println(MessageInfoCache.getInstance());
+		/*System.out.println(MessageInfoCache.getInstance());
 		System.out.println(messageInfoServiceDAOImp);
-		System.out.println(System.currentTimeMillis() + "测试");
+		System.out.println(System.currentTimeMillis() + "测试");*/
 		List<MessageInfo> messageList = messageInfoServiceDAOImp.getMessageInfos();
 		MessageInfoCache.addCacheInfoToMap(messageList );
 	}
 	
 	public void deleteMessageInfos() {
 		//MessageInfoCache.getInstance();
-		System.out.println(MessageInfoCache.getInstance());
+		/*System.out.println(MessageInfoCache.getInstance());
 		System.out.println(messageInfoServiceDAOImp);
-		System.out.println(System.currentTimeMillis() + "删除");
+		System.out.println(System.currentTimeMillis() + "删除");*/
 		if(myCache.readCacheMap != null && myCache.readCacheMap.size() > 0){
 			for(Map.Entry<Integer, MessageInfo> e: myCache.readCacheMap.entrySet() ){
 		        //System.out.println("键:"+e.getKey()+", 值:"+e.getValue());

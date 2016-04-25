@@ -61,7 +61,7 @@ public class Util {
 		return uuid.replace("-", "");
 	}
 	public static void main(String[] args) {
-	System.out.println(	Util.encrypt_MD5("1"+"111111"));
+	System.out.println(	Util.encrypt_MD5("houxp"+"111111"));
 	}
 	
 	public static String encrypt_MD5(String str) {
