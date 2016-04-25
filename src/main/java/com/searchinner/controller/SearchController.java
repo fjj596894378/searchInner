@@ -1,6 +1,7 @@
 package com.searchinner.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.annotation.Resource;
 
@@ -17,7 +18,6 @@ import com.searchinner.util.Util;
 @RequestMapping("/search")
 public class SearchController {
 	private ISearchService searchServiceDAOImp;
-	
 	/**
 	 * 首页
 	 * @return
@@ -64,4 +64,5 @@ public class SearchController {
 	public void setSearchServiceDAOImp(ISearchService searchServiceDAOImp) {
 		this.searchServiceDAOImp = searchServiceDAOImp;
 	}
+
 }

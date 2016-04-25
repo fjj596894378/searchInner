@@ -499,7 +499,8 @@ $(document).ready(function(){
 <body>
 	<input type="hidden" name="myarticleId" id="myarticleId" />
 	<!-- <div class="top-header" ></div> -->
-	<div class="container" >
+	<%@ include file="/mgr/public/includefiles/header.jsp"%> 
+	<%-- <div class="container" >
 		<div class="header">
 			<a href="<%=basePath%>search/index.action"><h1>gnnt</h1></a>
 		</div>
@@ -526,7 +527,7 @@ $(document).ready(function(){
 			</form>
 		</div>
 		<div class="clearfix"></div>
-	</div>
+	</div> --%>
 	<!---->
 	<div class="content">
 		<div class="container" >

@@ -244,7 +244,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <body>
 <input type="hidden" name="articleid" id="articleid" value="${article.id}"/>
 	<!-- <div class="top-header" ></div> -->
-	<div class="container" >
+	<%@ include file="/mgr/public/includefiles/header.jsp"%> 
+	<%-- <div class="container" >
 		<div class="header">
 			<a href="<%=basePath%>search/index.action"><h1>gnnt</h1></a>
 		</div>
@@ -270,7 +271,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</form>
 		</div>
 		<div class="clearfix"></div>
-	</div>
+	</div> --%>
 	<!---->
 	<div class="content">
 		<div class="container" >

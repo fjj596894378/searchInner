@@ -189,6 +189,11 @@ $(document).ready(function(){
                 name: "主页",
                 icon: "<%=basePath%>mgr/images/snap/office.png"
             },
+            {
+            	link:"<%=basePath%>develop/getList.action",
+                name: "系统管理",
+                icon: "<%=basePath%>mgr/images/snap/dw.png"
+            },
             <c:if test="${empty currentUser}">
             {
             	layouttype : "layout",
@@ -285,6 +290,7 @@ function updatebuttons(){
 
 <body >
 <input type="hidden" name="usernamehidden" id="usernamehidden" value="${currentUser.userName}"/>
+<%-- <input name="massagesOflogin" id="massagesOflogin" value="${massagesOflogin}"/> --%>
 <div class="modal" id="login-modal">
 	<a class="close" data-dismiss="modal">×</a>
 	<h1>登录</h1>

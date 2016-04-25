@@ -83,22 +83,27 @@ form label {
 	box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
 }
 
-.button:hover {
-	text-decoration: none;
-}
 
-.button:active {
-	position: relative;
-	top: 1px;
-}
-
-.blue {
+.cmdblue {
 	color: #fef4e9;
 	border: solid 1px #da7c0c;
 	background: #f78d1d;
-	background: -webkit-gradient(linear, left top, left bottom, from(#faa51a), to(#f47a20));
-	background: -moz-linear-gradient(top,  #faa51a,  #f47a20);
-	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#faa51a', endColorstr='#f47a20');
+	background: -webkit-gradient(linear, left top, left bottom, from(#EAE2E0),
+		to(#ED723C) );
+	background: -moz-linear-gradient(top, #FAFDFD, #E04806);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#faa51a',
+		endColorstr='#f47a20' );
+}
+
+.cmdred {
+	color: #fef4e9;
+	border: solid 1px #da7c0c;
+	background: #f78d1d;
+	background: -webkit-gradient(linear, left top, left bottom, from(#F73406),
+		to(#EC2921) );
+	background: -moz-linear-gradient(top, #F73406, #EC2921);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#faa51a',
+		endColorstr='#f47a20' );
 }
 .blue:hover {
 	background: #f47c20;
@@ -142,14 +147,51 @@ form label {
 	box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
 }
 
-.button:hover {
+.cmdbutton {
+	display: inline-block;
+	outline: none;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	font: 10px/100% Arial, Helvetica, sans-serif;
+	padding: .5em 2em .22em;
+	text-shadow: 0 1px 1px rgba(0, 0, 0, .3);
+	-webkit-border-radius: .5em;
+	-moz-border-radius: .5em;
+	border-radius: .5em;
+	-webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+	-moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+	box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+}
+.cmdblue {
+	color: #fef4e9;
+	border: solid 1px #da7c0c;
+	background: #f78d1d;
+	background: -webkit-gradient(linear, left top, left bottom, from(#EAE2E0),
+		to(#ED723C) );
+	background: -moz-linear-gradient(top, #FAFDFD, #E04806);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#faa51a',
+		endColorstr='#f47a20' );
+}
+
+.cmdred {
+	color: #fef4e9;
+	border: solid 1px #da7c0c;
+	background: #f78d1d;
+	background: -webkit-gradient(linear, left top, left bottom, from(#F73406),
+		to(#EC2921) );
+	background: -moz-linear-gradient(top, #F73406, #EC2921);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#faa51a',
+		endColorstr='#f47a20' );
+}
+ .button:hover {
 	text-decoration: none;
 }
 
 .button:active {
 	position: relative;
 	top: 1px;
-}
+} 
 
 .blue {
 	color: #fef4e9;
