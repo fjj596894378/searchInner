@@ -147,7 +147,7 @@ public class SingleThreadStdoutStderr
 						System.out.println(line);
 						listOut.add(line);
 						//if(line.trim().startsWith("信息: Server startup in")){
-						//	System.out.println("退出1-1：" + line);
+							System.out.println("退出1-1：" + line);
 						//	break;
 						//}
 					}else{

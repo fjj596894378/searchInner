@@ -232,8 +232,8 @@ public class SearchDAOImp implements SearchDAO{
 	@Override
 	public List<Article> queryIndexData() throws ParseException {
 		
-		String sql = "select * from (select id,articleTitle,articleContent,articleAuthor,articleAuthorId,lastModified,isdelete,to_char(addTime,'yy-mm-dd hh24:mi:ss') as addTime,articleContentPre,articleTag from learn_article where isdelete=0 and status=0 ORDER BY addTime desc) where rownum < 11 ";
-		List<Article> articleListRet = new ArrayList<Article>(10);
+		String sql = "select * from (select id,articleTitle,articleContent,articleAuthor,articleAuthorId,lastModified,isdelete,to_char(addTime,'yy-mm-dd hh24:mi:ss') as addTime,articleContentPre,articleTag from learn_article where isdelete=0 and status=0 ORDER BY addTime desc) where rownum < 31 ";
+		List<Article> articleListRet = new ArrayList<Article>(30);
 		Article articleRet = new Article();
 		final StringBuffer sb = new StringBuffer();
 		List list = this.jdbcTemplate.query(sql, new RowMapper<Object>() {

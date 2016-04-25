@@ -168,7 +168,7 @@ public class DevelopController {
 		}
 		if(linkModel.getStatus() != null && linkModel.getStatus().equals("N") ){
 			//启动
-			linkModel.setCmd("cd ./bin;./" + linkModel.getServiceName().trim() + " restart");
+			linkModel.setCmd("cd ./bin;./" + linkModel.getServiceName().trim() + " start");
 			listOut = developServiceDAOImp.startOrStopCmd(linkModel,true);
 		}else{
 			// 关闭

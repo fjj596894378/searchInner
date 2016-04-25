@@ -136,7 +136,7 @@ function startOrStopCmd(serviceName,startOrStop,siteaddress,siteusername,sitepas
 																					 
 																							  
 																					  msgShow += '<\/tr>';
-																					  msgShow += '<tr><td colspan="3">在重启或者关闭服务时，可能不成功。原因是tt命令有时候显示出来的服务名并不完整。如果不成功，可能就是你程序启动报错了。<\/td><\/tr>';
+																					  msgShow += '<tr><td colspan="3">在重启或者关闭服务时，可能不成功。原因:<br />1.tt命令显示的服务名不完全。程序没能捕获到正确的服务名。<br />2.程序启动未完全成功，可以再次查询。<br />3.服务启动过程中报错了。<br />4.目前已知做市商（transformhq）不能成功启动<\/td><\/tr>';
 																					  msgShow += '<\/table>';
 																					  $("#content_show_detail").html(msgShow);
 																				}else if(data.status == '1'){
@@ -265,7 +265,7 @@ $(function(){
 										 }
 												  
 										  msgShow += '<\/tr>';
-										  msgShow += '<tr><td colspan="3">在重启或者关闭服务时，可能不成功。原因是tt命令有时候显示出来的服务名并不完整。如果不成功，可能就是你程序启动报错了。<\/td><\/tr>';
+										  msgShow += '<tr><td colspan="3">在重启或者关闭服务时，可能不成功。原因:<br />1.tt命令显示的服务名不完全。程序没能捕获到正确的服务名。<br />2.程序启动未完全成功，可以再次查询。<br />3.服务启动过程中报错了。<br />4.目前已知做市商（transformhq）不能成功启动<\/td><\/tr>';
 										  msgShow += '<\/table>';
 										  $("#content_show_detail").html(msgShow);
 									}else if(data.status == '1'){
